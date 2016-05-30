@@ -11,12 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160528190902) do
-
-  create_table "problems", force: :cascade do |t|
-    t.string "title"
-    t.text   "problem"
-  end
+ActiveRecord::Schema.define(version: 20160530054216) do
 
   create_table "questions", force: :cascade do |t|
     t.integer  "problem_id"
@@ -24,6 +19,11 @@ ActiveRecord::Schema.define(version: 20160528190902) do
     t.text     "answer"
     t.text     "hint"
     t.datetime "true"
+  end
+
+  create_table "tutorials", force: :cascade do |t|
+    t.string "title"
+    t.text   "problem"
   end
 
 end
