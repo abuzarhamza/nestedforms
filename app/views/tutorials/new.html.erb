@@ -1,0 +1,18 @@
+<h1> Make an input for tutorial </h1>
+
+    <%= form_for :tutorials do |t| %>
+       <p>
+           <%= t.label :title %><br/>
+           <%= t.text_field :title %>
+      </p>
+
+      <p>
+           <%= t.label :problem %><br/>
+           <%= t.text_field :problem %>
+      </p>
+
+      <p>
+	    <%= t.submit %>
+      </p>
+
+	<% end %>
