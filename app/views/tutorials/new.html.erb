@@ -1,6 +1,7 @@
+
 <h1> Make an input for tutorial </h1>
 
-    <%= form_for :tutorials do |t| %>
+    <%= form_for :tutorial do |t| %>
        <p>
            <%= t.label :title %><br/>
            <%= t.text_field :title %>
@@ -10,6 +11,25 @@
            <%= t.label :problem %><br/>
            <%= t.text_field :problem %>
       </p>
+
+      
+	      <%= t.fields_for :questions do |q| %>
+	      <p>
+	  		<%= q.label :question , "question" %><br/>
+	  		<%= q.text_area :question, :rows => 3 %>
+	  	   </p>
+
+	  	   <p>
+	  		<%= q.label :answer , "answer" %><br/>
+	  		<%= q.text_area :answer, :rows => 3 %>
+	  	   </p>
+
+	  	   	<p>
+	  			<%= q.label :hint, "hint" %><br/>
+	  			<%= q.text_area :hint, :rows => 3 %>
+	  	   </p>
+		  <% end %>
+	  
 
       <p>
 	    <%= t.submit %>
