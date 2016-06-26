@@ -11,10 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160530054216) do
+ActiveRecord::Schema.define(version: 20160626071704) do
 
   create_table "questions", force: :cascade do |t|
-    t.integer  "problem_id"
+    t.integer  "tutorial_id"
     t.text     "question"
     t.text     "answer"
     t.text     "hint"

@@ -1,9 +1,10 @@
 class TutorialsController < ApplicationController
 
 	def new
-		@tutorial = Tutorial.new
+	  @tutorial = Tutorial.new
+       question = @tutorial.questions.build
 		#@tutorial.build_sqldata
-		#@problem.questions.build
+		#@@tutorial.questions.build
 		#3.times { @tutorial.questions.build } 
 	end
 
