@@ -32,7 +32,8 @@ class TutorialsController < ApplicationController
 
 	def update
       @tutorial = Tutorial.find(params[:id])
-      @tutorial.build_sqldata
+      #@tutorial.build_sqldata
+      @tutorial.questions.build
 
       if @tutorial.update(tutorial_param)
          redirect_to tutorial_path(@tutorial)
