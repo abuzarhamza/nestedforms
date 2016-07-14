@@ -4,15 +4,16 @@
  <p>
     title :  <%= @tutorial.problem %>
  </p>
+  <%for q in  @tutorial.questions%>
+    <p>
+         question : <%= q.question %>
+    </p>
+    <p>
+         question : <%= q.answer %>
+    </p>
+    <p>
+         question : <%= q.hint %>
+    </p>
+  <% end %>
 
-<p>
-     question : <= @tutorial.questions.question %>
-</p>
-<p>
-     question : <= @tutorial.questions.answer %>
-</p>
-<p>
-     question : <= @tutorial.questions.hint %>
-</p>
-      
 <%= link_to  "edit" ""  %>

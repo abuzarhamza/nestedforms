@@ -5,7 +5,7 @@ class TutorialsController < ApplicationController
        question = @tutorial.questions.build
 		#@tutorial.build_sqldata
 		#@@tutorial.questions.build
-		#3.times { @tutorial.questions.build } 
+		3.times { @tutorial.questions.build } 
 	end
 
 	def create
