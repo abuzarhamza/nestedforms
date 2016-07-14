@@ -26,6 +26,21 @@ class TutorialsController < ApplicationController
 
 	end
 
+	def edit
+		@tutorial = Tutorial.find(params[:id])
+	end
+
+	def update
+      @tutorial = Tutorial.find(params[:id])
+      @tutorial.build_sqldata
+
+      if @tutorial.update(tutorial_param)
+         redirect_to tutorial_path(@tutorial)
+      else
+          render :edit
+      end
+	end
+
 	private
         def tutorial_param
             params.require(:tutorial).permit(:title, :problem , questions_attributes: [ :question , :answer , :hint])

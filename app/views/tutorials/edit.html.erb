@@ -1,0 +1,34 @@
+<p> hi </p>
+  <%= form_for @tutorial do |t|%>
+    <h3>
+        <%= t.label :title %><br/>
+        <%= t.text_field :title , class: "form-control" , placeholder: "title" %>
+    </h3>
+
+    <br/>
+        <%= t.label :problem %><br/>
+        <%= t.text_area :problem , class: "form-control" , rows: 3, placeholder: "problem" %>
+    <br/>
+    <hr/>
+    
+    <%= t.fields_for :questions do |q|  %>
+        <p>
+            
+            <%= q.label :question %><br/>
+            <%= q.text_area :question , class: "form-control" , rows: 3 %>
+
+        </p>
+        <p>
+            <%= q.label :answer %><br/>
+            <%= q.text_area :answer , class: "form-control" , rows: 3%>
+        </p>
+        <p>
+            <%= q.label :hint %><br/>
+            <%= q.text_area :hint , class: "form-control" , rows: 3 %>
+        </p>
+        <hr/>
+    <% end %>
+    <%= t.submit %>
+  <% end %>
+
+<%= link_to  "edit" ""  %>
